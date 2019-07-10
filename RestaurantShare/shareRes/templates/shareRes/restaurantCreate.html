@@ -90,14 +90,18 @@
             </div>
         </div>
         <div class="content">
-            <form action="" method="POST" onsubmit="return checkFrom();">{% csrf_token %}
+            <form action="./Create" method="POST" onsubmit="return checkFrom();">{% csrf_token %}
                 <div class="inputDiv">
                     <div class="input-group">
                         <span class="input-group-addon" id="sizing-addon2">카테고리</span>
                         <select id="resCategory" name="resCategory" class="resCategory" size="1" required autofocus>
-                            <option value="한식" selected>한식</option>
-                            <option value="중식">중식</option>
-                            <option value="일식">일식</option>
+                            {% for category in categories %}
+                            {% if category.id == 3 %}
+                            <option value="{{category.id}}" selected>{{category.category_name}}</option>
+                            {% else %}
+                            <option value="{{category.id}}">{{category.category_name}}</option>
+                            {% endif %}
+                            {% endfor %}
                         </select>  
                     </div>
                     <div class="input-group">
