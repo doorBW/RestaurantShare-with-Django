@@ -93,25 +93,26 @@
             <div class="inputDiv">
                 <div class="input-group">
                     <span class="input-group-addon" id="sizing-addon2">카테고리</span>
-                    <input id="resCategory" name="resCategory" type="text" class="form-control" disabled value="">
+                    <input id="resCategory" name="resCategory" type="text" class="form-control" disabled value="{{restaurant.category.category_name}}">
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon" id="sizing-addon2">맛집 이름</span>
-                    <input id="resTitle" name="resTitle" type="text" class="form-control" disabled value="">
+                    <input id="resTitle" name="resTitle" type="text" class="form-control" disabled value="{{restaurant.restaurant_name}}">
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon" id="sizing-addon2">관련 링크</span>
-                    <input id="resLink" name="resLink" type="text" class="form-control" disabled value="">
+                    <input id="resLink" name="resLink" type="text" class="form-control" disabled value="{{restaurant.restaurant_link}}">
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon" id="sizing-addon2">상세 내용</span>
-                    <textarea id="resContent" name="resContent" cols="90" rows="10" disabled value=""></textarea>
+                    <textarea id="resContent" name="resContent" cols="90" rows="10" disabled value="">{{restaurant.restaurant_content}}</textarea>
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon" id="sizing-addon2">장소 키워드</span>
-                    <input id="resLoc" name="resLoc" type="text" class="form-control" disabled value="">
+                    <input id="resLoc" name="resLoc" type="text" class="form-control" disabled value="{{restaurant.restaurant_keyword}}">
                 </div>
                 <a href ="/" class="resAddBtn btn btn-info" role="button">홈으로</a>
+                <a href ="/" class="resAddBtn btn btn-danger" role="button">수정하기</a>
             </div>
         </div>
         <div class="panel-footer">
