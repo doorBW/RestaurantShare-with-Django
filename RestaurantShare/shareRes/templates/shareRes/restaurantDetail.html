@@ -113,6 +113,10 @@
                 </div>
                 <a href ="/" class="resAddBtn btn btn-info" role="button">홈으로</a>
                 <a href ="./updatePage/{{restaurant.id}}" class="resAddBtn btn btn-danger" role="button">수정하기</a>
+                <form action="./delete" method="POST">{% csrf_token %}
+                    <input type="hidden" id="resId" name="resId" value="{{restaurant.id}}"/>
+                    <input type="submit" class="resAddBtn btn btn-danger" value="삭제하기">
+                </form>
             </div>
         </div>
         <div class="panel-footer">
