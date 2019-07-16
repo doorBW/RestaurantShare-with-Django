@@ -204,7 +204,7 @@
         </div>
         <div class="content">
             <div class="row">
-                <form action="" method="POST" onsubmit="return emailCheckForm();"> {% csrf_token %}
+                <form action="./sendEmail/send/" method="POST" onsubmit="return emailCheckForm();"> {% csrf_token %}
                     <div class="restaurantInfoDiv ">
                         <div class="row">
                             <div class="infoHeaderDiv">
@@ -224,7 +224,7 @@
                                 {% if restaurant.category == category %}
                                 <div class="input-group">
                                     <span class="input-group-addon">
-                                        <input name="check{{restaurant.id}}" id="check{{restaurant.id}}" type="checkbox">
+                                        <input name="checks" id="check{{restaurant.id}}" type="checkbox" value="{{restaurant.id}}">
                                     </span>
                                     <a href="restaurantDetail/{{restaurant.id}}"><input name="res{{restaurant.id}}" id="res{{restaurant.id}}" type="text" class="form-control" disabled style="cursor: pointer;" value="{{restaurant.restaurant_name}}"></a>
                                 </div>
