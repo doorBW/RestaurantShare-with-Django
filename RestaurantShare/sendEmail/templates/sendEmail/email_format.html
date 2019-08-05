@@ -1,0 +1,16 @@
+<html >
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>맛집 공유</h1>
+    <p>{{ inputContent }}<br>발신자님께서 공유하신 맛집은 아래와 같습니다.</p>
+    {% for restaurant in restaurants %}
+    <h2>{{ restaurant.restaurant_name }}</h2>
+    <h4>* 관련링크 </h4><p>{{ restaurant.restaurant_link }}</p>
+    <h4>* 관련내용 </h4><p>{{ restaurant.restaurant_content }}</p>
+    <h4>* 관련키워드 </h4><p>{{ restaurant.restaurant_keyword }}</p>
+    {% endfor %}
+</body>
+</html>
+
