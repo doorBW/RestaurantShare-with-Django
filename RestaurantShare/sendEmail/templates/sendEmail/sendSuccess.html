@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Boot strap -->
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <style>
+        .container{
+            margin-top: 20px;
+        }
+        .jumbotron{
+            padding-top:15px;
+            padding-bottom:15px;
+        }
+        .content{
+            min-height: 60%;
+            margin: auto;
+            text-align: center;
+        }
+        .panel-footer{
+            margin-top: 50px;
+            height: 10%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="jumbotron">
+                <h1>이메일 발송 결과</h1>
+                <p>made by Django</p>
+            </div>
+        </div>
+        <div class="content">
+            <div class="resultDiv">
+                <h3>이메일 발송에 성공했어요!</h3>
+                <p>아래 버튼을 누르시면 홈으로 돌아갈 수 있어요 :)</p>
+                <a href ="/" class="resAddBtn btn btn-info" role="button">홈으로</a>
+            </div>
+        </div>
+        <div class="panel-footer">
+            실전예제로 배우는 Django. Project2-RestaurantShare
+        </div>
+    </div>
+</body>
+</html>

@@ -11,22 +11,26 @@ from django.template.loader import render_to_string
 
 # Create your views here.
 def sendEmail(request):
-    checked_res_list = request.POST.getlist('checks')
-    inputReceiver = request.POST['inputReceiver']
-    inputTitle = request.POST['inputTitle']
-    inputContent = request.POST['inputContent']
-    restaurants = []
-    for checked_res_id in checked_res_list:
-        restaurants.append( Restaurant.objects.get(id = checked_res_id) )
+    try:
+        checked_res_list = request.POST.getlist('checks')
+        inputReceiver = request.POST['inputReceiver']
+        inputTitle = request.POST['inputTitle']
+        inputContent = request.POST['inputContent']
+        restaurants = []
+        for checked_res_id in checked_res_list:
+            restaurants.append( Restaurant.objects.get(id = checked_res_id) )
 
-    content = {'inputContent': inputContent, 'restaurants':restaurants}
+        content = {'inputContent': inputContent, 'restaurants':restaurants}
 
-    msg_html = render_to_string('sendEmail/email_format.html',content)
+        msg_html = render_to_string('sendEmail/email_format.html',content)
 
-    msg = EmailMessage(subject = inputTitle, body=msg_html, from_email="djangoemailtester001@gmail.com", bcc=inputReceiver.split(','))
-    msg.content_subtype = 'html'
-    msg.send()
-    return HttpResponseRedirect(reverse('index'))
+        msg = EmailMessage(subject = inputTitle, body=msg_html, from_email="djangoemailtester001@gmail.com", bcc=inputReceiver.split(','))
+        msg.content_subtype = 'html'
+        msg.send()
+        return render(request, 'sendEmail/sendSuccess.html')
+        # return HttpResponseRedirect(reverse('index'))
+    except:
+        return render(request, 'sendEmail/sendFail.html')
     # mail_html = "<html><body>"
     # mail_html += "<h1> 맛집 공유 </h1>"
     # mail_html += "<p>"+inputContent+"<br>"
