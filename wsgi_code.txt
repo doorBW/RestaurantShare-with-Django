@@ -1,0 +1,13 @@
+import os
+import sys
+
+path = '/home/DjangoPracticeAccount/RestaurantShare-with-Django/RestaurantShare' 
+# /home/PythonAnyWhere의 Username/github 저장소 이름/Django 프로젝트 이름
+if path not in sys.path:
+    sys.path.append(path)
+
+os.environ['DJANGO_SETTINGS_MODULE'] = 'RestaurantShare.settings' # /Django project 이름.settings
+
+from django.core.wsgi import get_wsgi_application
+from django.contrib.staticfiles.handlers import StaticFilesHandler
+application = StaticFilesHandler(get_wsgi_application())
